@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod-with-node-selector
+  labels:
+    app: webserver
+    tier: backend
+  annotations:
+    version: latest
+    release_date: 2022/04/10
+    contact: teddy1565@gmail.com
+spec:
+  containers:
+  - name: pod-demo
+    image: teddy1565/docker-demo
+    ports:
+    - containerPort: 3000
+  nodeSelector:
+    hardware: high-memory
